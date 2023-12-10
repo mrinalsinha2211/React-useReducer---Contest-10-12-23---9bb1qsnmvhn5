@@ -16,14 +16,13 @@ function reducer(state, action) {
         addNum: state.addNum,
         subNum: state.subNum
       };
-
-    case ACTIONS.DECREMENT:
-      return{
-        count:Number(state.count)-Number(state.addNum),
-        addNum:state.addNum,
-        subNum:state.subNum
  
-   
+    case ACTIONS. DECREMENT:
+      return {
+         count: Number(state.count) - Number(state.addNum),
+         addNum: state.addNum,
+         subNum: state.subNum
+      }
     case ACTIONS.SET_ADD_NUM:
       return {
         count: state.count,
@@ -33,9 +32,10 @@ function reducer(state, action) {
        case ACTIONS.SET_SUB_NUM:
       return {
         count: state.count,
-        subNum: state.subNum,
-        addNum: action.payload
-      }
+        addNum: action.payload,
+        subNum: state.subNum
+       
+      };
     default:
       return {
         count: 10,
@@ -44,6 +44,7 @@ function reducer(state, action) {
       };
   }
 }
+
 const App = () => {
  const[state, dispatch]=useReducer(reducer,{
    count:10,
